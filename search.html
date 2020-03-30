@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #header {
+            background-color: black;
+            color: white;   
+            text-align: center;
+            padding: 5px;
+        }
+
+        #nav {
+            line-height: 30px;
+            background-color: #eeeeee;
+            height: 300px;
+            width: 100px;
+            float: left;
+            padding: 5px;
+        }
+
+        #section {
+            width: 350px;
+            float: left;
+            padding: 10px;
+        }
+
+        #footer {
+            background-color: black;
+            color: white;
+            clear: both;
+            text-align: center;
+            padding: 5px;
+        }
+
+        ::placeholder {
+            color: gray;
+            opacity: 0.5;
+            /* Firefox */
+        }
+    </style>
+</head>
+
+<body>
+    <form id="myform1" action="Untitled-2.php" method="POST">
+        <h3 id="til1" style="text-align: center; color: rgb(240, 18, 18);">查询网站</h3>
+        <!--查询资料库-->
+        <div>
+            查询:<input placeholder="例：蛋白质" type="text" name="search" id="search" onfocus="this.placeholder=''" onblur="this.placeholder='例：蛋白质'"/><br>
+            <input value="查询" type="submit" />
+            <input type="button" value="返回初始页面" onclick="window.location.href='index.html'" />
+            <!--onclick 改-->
+        </div>
+        <br>
+        <br>
+        <!--<iframe src="https://www.uc123.com/" width="600" height="600"></iframe>
+        镶嵌式网页-->
+    </form>
+</body>
+
+</html>

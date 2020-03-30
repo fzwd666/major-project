@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #header {
+            background-color: black;
+            color: white;   
+            text-align: center;
+            padding: 5px;
+        }
+
+        #nav {
+            line-height: 30px;
+            background-color: #eeeeee;
+            height: 300px;
+            width: 100px;
+            float: left;
+            padding: 5px;
+        }
+
+        #section {
+            width: 350px;
+            float: left;
+            padding: 10px;
+        }
+
+        #footer {
+            background-color: black;
+            color: white;
+            clear: both;
+            text-align: center;
+            padding: 5px;
+        }
+
+        ::placeholder {
+            color: gray;
+            opacity: 0.5;
+            /* Firefox */
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var obj;
+        function txtChang() {
+            if(document.getElementById("til1")=="")
+            {
+                document.getElementById("input").disabled=true;
+            }
+            else
+            {
+                document.getElementById("input").disabled=false;
+            }
+            document.getElementById("til1").innerHTML = "123";
+        }
+    </script>
+    <form id="myform" action="Untitled-1.php" method="POST">
+        <!--写入资料库-->
+        <div>
+            <h3 id="til1" style="text-align: center; color: rgb(240, 18, 18);">输入网站</h3>
+            <p>
+                网址:<input placeholder="example.com" type="text" name="web" id="web" onfocus="this.placeholder=''" 
+                onblur="this.placeholder='example.com'" 
+                onchange="txtChang()"/><br />
+                <!-- webAbout:<input placeholder="XXX" type="text" name="webAbout" id="webAbout" /><br />-->
+                <input id="input" value="输入" type="submit" />
+                <input type="button" value="返回初始页面" onclick="window.location.href='index.html'" />
+                <!--写入资料库-->
+                <br>
+            </p>
+            <br />
+
+        </div>
+    </form>
+</body>
+
+</html>
