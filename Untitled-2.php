@@ -14,9 +14,10 @@ else
 $sql="SELECT * from web WHERE webAbout LIKE '%$_POST[search]%'";
 if($result=$link->query($sql))
 {
-    if(count($result)==0)
+    if(count(mysqli_fetch_all($result))==0)
     {
         printf("资料库没有相关资料！");
+        echo "<br>";
     }
     while($row=$result->fetch_row())
     {
