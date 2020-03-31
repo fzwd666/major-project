@@ -14,11 +14,7 @@ else
 $sql="SELECT * from web WHERE webAbout LIKE '%$_POST[search]%'";
 if($result=$link->query($sql))
 {
-    if(count(mysqli_fetch_all($result))==0)
-    {
-        printf("资料库没有相关资料！");
-        echo "<br>";
-    }
+    $num=0;
     while($row=$result->fetch_row())
     {
         printf("编号：%d   网址：%s   ",$row[0],$row[1]);
@@ -31,6 +27,12 @@ if($result=$link->query($sql))
         echo"<br>";
        //echo" <iframe src=$row[1] width='400' height='400'></iframe>";
         echo("<br>");
+        $num+=1;
+    }
+    if($num==0)
+    {
+        printf("资料库没有相关资料！");
+        echo "<br>";
     }
     $result->close();
 }
