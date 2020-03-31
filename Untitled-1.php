@@ -63,7 +63,14 @@ echo "<a href='index.html'><input type='button' value='返回初始页面' ></a>
  // 关闭 CURL   
  curl_close($ch);   
     
-    
+ $pos=strpos($store,'utf-8');
+ if($pos==false)
+ {
+     $store=iconv("gbk","utf-8",$store);
+ }   
+ //preg_match("/<title>(.*)<\/title>/i",$store, $title);
+//echo $title[1];
+
  // 解析 HTML 的 <head> 区段   
  preg_match("/<head.*>(.*)<\/head>/smUi",$store, $htmlHeaders);   
  if(!count($htmlHeaders)){   
